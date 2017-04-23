@@ -1,0 +1,93 @@
+<div layout="column" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools docs-toolbar-tools">
+      <!--<button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button"  ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+      <md-icon md-svg-src="img/icons/ic_menu_24px.svg" class="ng-scope" aria-hidden="true">
+      <div class="md-ripple-container"></div></button>-->
+
+      <button ui-sref="chat" class="backButton md-icon-button md-button md-ink-ripple">
+        <md-icon md-svg-src="img/icons/ic_arrow_back_24px.svg" class="ng-scope" aria-hidden="true">
+        </md-icon>
+        <div class="md-ripple-container"></div>
+      </button>
+
+      <h2 class="md-toolbar-item md-breadcrumb md-headline">{{currentMenu}}</h2>
+    </div>
+  </md-toolbar>
+ <section layout="row" flex>
+  <md-sidenav  class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+
+    <md-content layout-margin>
+      <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button" ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" class="ng-scope" aria-hidden="true">
+        <div class="md-ripple-container"></div>
+      </button>
+      <div class="userAvatar" style="border-radius: 50%;overflow: hidden;width: 250px;height: 250px;">
+          <img data-ng-src="{{avatar}}" width="150%"/>
+          <div class="userAvatar__fab">
+            <md-fab-trigger ui-sref="prefs">
+              <md-button aria-label="menu" class="md-fab ">
+                <md-icon md-svg-src="img/icons/pencil-edit-button.svg"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+          </div>
+      </div>
+      <div class="userName">
+        {{userName}}
+      </div>
+
+    </md-content>
+
+      <div class="grayMenu">
+      <div class="shadowLine"></div>
+
+        <ul class="grayMenu__list">
+          <li>
+            <a ui-sref="chat">Лента</a>
+          </li>
+          <li ng-if="role=='admin'">
+            <a ui-sref="users">Пользователи</a>
+          </li>
+          <li ng-if="role=='admin'">
+            <a ui-sref="files" class="active">Управление файлами</a>
+          </li>
+          <li>
+            <a ui-sref="prefs">Настройки</a>
+          </li>
+          <li>
+            <a ui-sref="exit">Выйти</a>
+          </li>
+        </ul>
+
+      </div>
+  </md-sidenav>
+  <md-content flex layout-padding>
+    <md-list>
+      <md-list-item>
+        <a ui-sref="files({dir: 'Риэлторам'})">Риэлторам</a>
+      </md-list-item>
+      <md-list-item>
+        <a ui-sref="files({dir: 'Базовая информация'})">Базовая информация</a>
+      </md-list-item>
+      <md-list-item>
+        <a ui-sref="files({dir: 'Документы'})">Документы</a>
+      </md-list-item>
+    </md-list>
+
+    <md-list style='width: 40%;'>
+      <md-list-item ng-repeat="file in flist">
+        <a href="{{curDir}}/{{file.name}}">{{ file.name }}</a>
+        <md-button class="md-secondary" ng-click='file_delete(file)'>
+            <i class="material-icons">delete</i>
+        </md-button>
+      </md-list-item>
+    </md-list>
+
+    <div class="bar bar-footer bar-stable item-input-inset slack-menssage-bar "
+       style="padding-top:30px;">
+       <input type="file" id="file" name="file"/>
+       <button ng-click="file_upload()">Загрузить</button>
+    </div>
+  </md-content>
+ </section>
+</div>

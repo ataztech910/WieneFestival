@@ -1,0 +1,33 @@
+<div layout="column"  ng-cloak>
+
+
+
+<ion-content>
+
+
+
+<md-content layout="column" flex>
+  <div class="logo">
+    <img class="logo__image" src="img/logo.png" />
+    <div class="logo__textAfter grenntext">
+      {{preload_text}}
+    </div>
+    <div class="userName">
+
+      {{userName}}
+
+    </div>
+  </div>
+</md-content>
+
+</ion-content>
+<ion-footer-bar align-title="left" class="bar-assertive" ui-sref="chat" >
+  <footer flex="none" ui-sref="chat" >
+    <div class="send-button greenLogon" ui-sref="chat" >
+      <span>начать</span><md-icon md-svg-src="img/icons/ic_arrow_ff_24px.svg" class="ng-scope" aria-hidden="true">
+      </md-icon>
+    </div>
+  </footer>
+</ion-footer-bar>
+
+</div>

@@ -1,0 +1,44 @@
+<div>
+
+  <div class="greenBlock">
+
+
+<div class="centered">
+    <div class="authtext">
+      <span class="authtext__header">
+        {{preload_text}}
+      </span>
+      <span class="authtext__header2">
+        {{preload_text2}}
+      </span>
+    </div>
+
+
+</div>
+</div>
+
+
+      <md-content class="md-no-momentum" style="background:none;margin: 0 auto; padding:20px;">
+      <md-input-container md-no-float class="md-block" style="margin-top: 20px;">
+        <label>Логин</label>
+        <input ng-model="user.login" >
+      </md-input-container>
+
+      <md-input-container md-no-float class="md-block">
+        <label>Пароль</label>
+        <input ng-model="user.password" type="password">
+      </md-input-container>
+
+
+      <md-button ng-show="!login" class="md-raised md-primary" ng-click="loginAdmin()">Вход</md-button>
+      <md-progress-circular ng-show="login"  md-mode="indeterminate"></md-progress-circular>
+    </md-content>
+
+
+  <div ng-if="status" id="status">
+     <b layout="row" layout-align="center center" class="md-padding">
+       {{status}}
+     </b>
+   </div>
+
+</div>

@@ -1,0 +1,144 @@
+<div layout="column" ng-cloak ng-load="hideKeys();">
+
+  <md-toolbar>
+      <div class="md-toolbar-tools docs-toolbar-tools">
+      <!--<button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button"  ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+      <md-icon md-svg-src="img/icons/ic_menu_24px.svg" class="ng-scope" aria-hidden="true">
+      <div class="md-ripple-container"></div></button>-->
+
+      <button ui-sref="chat" class="backButton md-icon-button md-button md-ink-ripple">
+        <md-icon md-svg-src="img/icons/ic_arrow_back_24px.svg" class="ng-scope" aria-hidden="true">
+        </md-icon>
+        <div class="md-ripple-container"></div>
+      </button>
+
+      <h2 class="md-toolbar-item md-breadcrumb md-headline">{{currentMenu}}</h2>
+
+    </div>
+  </md-toolbar>
+<section layout="row" flex style="height: 600px;">
+  <md-sidenav  class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+    <md-content layout-margin>
+      <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button" ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" class="ng-scope" aria-hidden="true">
+        <div class="md-ripple-container"></div>
+      </button>
+      <div class="userAvatar" style="border-radius: 50%;overflow: hidden;width: 250px;height: 250px;">
+          <img data-ng-src="{{avatar}}" width="150%"/>
+          <div class="userAvatar__fab">
+            <md-fab-trigger ui-sref="prefs">
+              <md-button aria-label="menu" class="md-fab ">
+                <md-icon md-svg-src="img/icons/pencil-edit-button.svg"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+          </div>
+      </div>
+      <div class="userName">
+        {{userName}}
+      </div>
+</md-content>
+<div class="grayMenu">
+  <div class="shadowLine"></div>
+    <ul class="grayMenu__list">
+          <li>
+            <a ui-sref="chat" >Лента</a>
+          </li>
+          <li ng-if="role=='admin'">
+            <a ui-sref="users" class="active">Пользователи</a>
+          </li>
+          <li>
+            <a ui-sref="prefs">Настройки</a>
+          </li>
+          <li>
+            <a ui-sref="exit">Выйти</a>
+          </li>
+        </ul>
+      </div>
+  </md-sidenav>
+
+<md-content flex layout-padding>
+
+<h2>Управление пользователями</h2>
+  <table>
+    <tr ng-show="v.fio" ng-repeat="(k,v) in admins">
+      <td><!--a ui-sref="showUser({id: v.$id})">{{v.fio}}</a-->
+          <div style="cursor: pointer;" ng-click="editUser(v.$id)">{{v.fio}}</div>
+      </td>
+      <td>
+        <md-button ng-show="v.user!='admin'" class="md-warn" ng-click="delUser(v.$id)" aria-label="Удалить">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg"></md-icon>
+        </md-button>
+      </td>
+    </tr>
+  </table>
+
+
+
+    <md-button class="md-raised md-primary" ng-click="addForm=true">добавить</md-button>
+
+
+    <div ng-show="EditForm">
+      <h3>Изменение пользователя</h3>
+      <md-input-container>
+        <label>ФИО</label>
+        <input ng-model="user.fio">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Email</label>
+        <input ng-model="user.login" type="email">
+      </md-input-container>
+      <md-input-container>
+        <label>Пароль</label>
+        <input ng-model="user.password" type="password" >
+      </md-input-container>
+      <md-input-container>
+        <label>Тип пользователя</label>
+        <md-select ng-model="user.role">
+            <md-option ng-selected="user.role=='admin'" value="admin">Администратор</md-option>
+            <md-option ng-selected="user.role=='manager'" value="manager">Менеджер</md-option>
+        </md-select>
+      </md-input-container>
+      <br>
+      <md-button class="md-raised md-primary" ng-click="SaveUser(uId)">сохранить</md-button>
+      <md-button class="md-raised md-warn" ng-click="EditForm=false">отмена</md-button>
+    </div>
+
+
+    <div ng-show="addForm">
+      <h3>Добавление пользователя</h3>
+      <md-input-container>
+        <label>ФИО</label>
+        <input ng-model="newuser.fio">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Email</label>
+        <input ng-model="newuser.login" type="email">
+      </md-input-container>
+      <md-input-container>
+        <label>Пароль</label>
+        <input ng-model="newuser.password" type="password" >
+      </md-input-container>
+      <md-input-container>
+        <label>Тип пользователя</label>
+        <md-select ng-model="newuser.role">
+            <md-option value="admin">Администратор</md-option>
+            <md-option value="manager">Менеджер</md-option>
+        </md-select>
+      </md-input-container>
+      <br>
+      <md-button class="md-raised md-primary" ng-click="addUser()">добавить</md-button>
+      <md-button class="md-raised md-warn" ng-click="addForm=false">отмена</md-button>
+    </div>
+
+
+  </md-list>
+
+
+</md-content>
+
+
+</section>
+
+</div>

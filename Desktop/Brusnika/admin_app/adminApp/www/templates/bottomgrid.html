@@ -1,0 +1,62 @@
+<md-bottom-sheet class="md-grid" layout="column" keyboard-attach>
+  <div ng-show="!formShow" >
+
+    <div style="padding:10px;">
+      <div ng-repeat="sharedMess in sharedMess | orderBy:'$index':true">
+        <b>{{sharedMess.message_currday}} {{sharedMess.message_currmonth}}</b>
+        {{sharedMess.message}}
+      </div>
+    </div>
+
+  <!--<div class="sendClientData" ng-click="getCamera()">-->
+    <!--<md-icon md-svg-src="img/icons/photo-camera.svg"></md-icon>Сделать снимок-->
+  <!--</div>-->
+  <!--<div class="sendClientData" ng-click="getImagePicker()">-->
+    <!--<md-icon md-svg-src="img/icons/ic_photo_24px.svg"></md-icon>Выбрать снимок-->
+  <!--</div>-->
+  <!--<div class="sendClientData" ng-click="formShow=true">-->
+    <!--<md-icon md-svg-src="img/icons/text-document-page.svg"></md-icon>Отправить данные клиента-->
+  <!--</div>-->
+
+  <!--div class="sendBottomBtn">
+    ОТПР.
+  </div-->
+  </div>
+
+  <div ng-show="formShow" >
+    <!--<div class="form">-->
+      <!--<div class="registerForm__fromcontent">-->
+      <!--<md-input-container md-no-float>-->
+        <!--<input required ng-model="form.fio" placeholder="ФИО">-->
+      <!--</md-input-container>-->
+
+      <!--<md-input-container md-no-float>-->
+        <!--<input required ng-model="form.phone"  id="phone" mask='+7(999)99-99-999' placeholder="Телефон">-->
+      <!--</md-input-container>-->
+
+      <!--<md-input-container md-no-float>-->
+        <!--<input  ng-model="form.passport"  placeholder="Номер паспорта">-->
+      <!--</md-input-container>-->
+
+      <!--<md-input-container md-no-float>-->
+        <!--<input  ng-model="form.whoGave" placeholder="Выдан">-->
+      <!--</md-input-container>-->
+
+      <!--<md-input-container md-no-float>-->
+        <!--<input  ng-model="form.address" placeholder="Прописка">-->
+      <!--</md-input-container>-->
+
+      <!--&lt;!&ndash;md-input-container md-no-float>-->
+        <!--<input  ng-model="form.objectID" placeholder="ID объекта">-->
+      <!--</md-input-container&ndash;&gt;-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="sendFormBottomBtn" ng-click="formClick()">-->
+      <!--OK-->
+    <!--</div>-->
+
+
+
+  </div>
+
+</md-bottom-sheet>

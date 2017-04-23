@@ -1,0 +1,655 @@
+/* Empty. Add your own CSS if you like */
+.grayBlock{
+  background-color: #f8f8f8;
+  -webkit-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.5);
+    position: relative;
+  width: 100%;
+}
+.logo{
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 15%;
+}
+.logo--onregister{
+
+    padding-top: 15%;
+    padding-bottom: 0%;
+}
+.logo__image{
+  width:40%;
+}
+.logo__textAfter{
+  font-size: calc(0.75em + 1vmin);
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 20%;
+}
+.greenBlock{
+  background-color: #9bca38;
+    height: 13em;
+
+  width: 100%;
+
+
+
+}
+
+
+.textarea{
+  border: none !important;
+}
+
+.regdiv{
+
+    text-align: center;
+    padding-top: 17%;
+    position: relative;
+
+}
+
+.loaderHello{
+  position: absolute;
+  background: transparent;
+  left:42%;
+}
+
+.regButton{
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px #fff solid;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-decoration: none;
+}
+.after_reg_text{
+  width: 60%;
+  color: #fff;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.after_reg_text a{
+  color: #000;
+}
+.loginBtn{
+  display: block;
+  height: auto;
+  text-align: center;
+  padding: 5%;
+  color: #fff;
+  text-decoration: none;
+}
+.loginBtn span{
+  background: url("../img/arrow_login.png") no-repeat;
+}
+.input{
+  padding: 1%
+}
+.input input{
+  padding: 10%;
+  background: transparent;
+  width: 100%;
+  border-bottom: 1px solid #979fa9;
+  transition: all 0.1s;
+}
+
+.input input:focus{
+  border-bottom: 1px solid #37465b;
+  color: #37465b;
+
+}
+.darkH2{
+  font-size: 1em;
+  color: #37465b;
+}
+.formLogin{
+  margin: 0 auto;
+  width: 75%;
+  text-align: center;
+  padding-bottom: 10%;
+  padding-top: 10%;
+}
+.pagecontent{
+  min-height: calc(690px * (90/150));
+  height: 90vh;
+}
+.backButton{
+  padding: 25px;
+  display: inline-block;
+  padding-top: 40px;
+}
+.backButton md-icon{
+  width: 25px;
+  color: #fff;
+}
+.authtext{
+  color: #fff;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+      padding-top: 5em;
+}
+.authtext__header{
+  display: block;
+  font-size: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.authtext__header2{
+ display: block;
+
+ font-size: 1.03em;
+padding-top: 5px;
+}
+
+.centered{
+   text-align: center;
+}
+.rounds{
+
+ display: inline-block;
+ margin-top: 20px;
+    margin-top: 3em;
+
+}
+.loginBtns{
+   display: inline-block;
+   margin-top: 10%;
+   position: relative;
+}
+
+.loader{
+    position: absolute;
+    top: 25%;
+    left: 35%;
+}
+.rounds div{
+  float: left;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; /* future proofing */
+  -khtml-border-radius: 50%; /* for old Konqueror browsers */
+  border: 6px solid #fff;
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+}
+
+.rounds .active{
+  background: #fff;
+}
+.rounds:before{
+
+}
+
+.rounds:after{
+  clear: all !important;
+}
+.numberBtn{
+  margin: 3px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+
+  padding: 15px;
+  font-size: 2.5em;
+
+  width: 55px;
+  color: #5a6575;
+      height: 55px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; /* future proofing */
+  -khtml-border-radius: 50%; /* for old Konqueror browsers */
+  border: 1px solid #fff;
+  transition: all 0.4s;
+
+}
+.numberBtn:active{
+  border: 1px solid #000;
+
+}
+
+.mainheader{
+      height: auto;
+}
+
+.list{
+      top: 25px;
+}
+
+.chat-bubble.left {
+    background-color: #37465b;
+    float: left;
+    margin-left: 55px;
+    color: #fff;
+}
+.chat-bubble.right {
+    background-color: #e7e7e7;
+    color: #37465b;
+    float: right;
+    margin-right: 55px;
+}
+.chat-bubble {
+
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    margin: 10px;
+    max-width: 80%;
+}
+img.profile-pic.right {
+    right: 10px;
+}
+img.profile-pic.left {
+    left: 10px;
+}
+img.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10px;
+        top: 12px;
+}
+.message-wrapper {
+    position: relative;
+}
+.cf{ clear: both !important; }
+
+.message-detail{
+  color: #8e949c;
+}
+.modal .bar-positive{
+  height: 47px;
+  background: #9dca32;
+}
+.modal_content{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.sendForm{
+  padding: 10px;
+  padding-top: 21px;
+  background: #9dca32 !important;
+  color: #fff;
+}
+.sendFormError{
+  border: none;
+  border-bottom: 1px solid red;
+}
+
+.send-button{
+  background-color: #f2f2f2;
+  color: #37465b;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.send-button span{
+  padding-right: 20px;
+}
+.registerForm{
+  text-align: center;
+  padding: 20px;
+      padding-top: 35px;
+}
+.registerForm__avatar{
+  margin-bottom: 10px;
+}
+.registerForm__fromcontent md-input-container {
+
+width: 194px;
+height: 40px;
+
+}
+.registerForm__fromcontent  .md-input-focused input{
+
+border-color: #37465b !important;
+
+}
+.registerForm__fromcontent .selectonreg{
+  text-align: left;
+}
+
+.registerForm__fromcontent .selectonreg label{
+  color: #37465b !important;
+}
+
+.registerForm__fromcontent .md-select-value{
+border-color: #37465b !important;
+}
+
+.registerForm__fromcontent md-select-menu.md-default-theme md-content md-option[selected], md-select-menu md-content md-option[selected]{
+  color: #37465b !important;
+}
+.flex-none{
+  width: 100%;
+}
+.layout-row, .layout-column{
+  background: #fff;
+}
+
+.wait{
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+
+}
+.wait__middle{
+  top: 10em;
+  position: relative;
+}
+.wait__text h2, .wait__text h3{
+  color: #37465b;
+}
+.wait__text h3{
+  font-size: 14px;
+}
+.wait__text span{
+  color: #d7d8dc;
+}
+.grenntext{
+  color: #99ca3c;
+}
+.greenLogon{
+  background: #99ca3c;
+  color: #fff;
+}
+.greenLogon md-icon{
+  color: #fff;
+}
+
+.userName{
+    color: #37465b;
+    padding-left: 2em;
+    margin-top: 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    padding-top: 13px;
+    text-align: left;
+    padding-left: 25px;
+}
+.userAvatar{
+  text-align: center;
+  position: relative;
+}
+.userAvatar__fab{
+  position: absolute;
+  top: 50%;
+
+}
+.shadowLine{
+  -webkit-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.5);
+  width: 100%;
+    height: 8px;
+    position: absolute;
+        top: -10px;
+        left: 0;
+}
+.md-button.md-default-theme.md-fab, .md-button.md-fab{
+  background: #99ca3c;
+}
+.md-button.md-default-theme.md-fab:not([disabled]):hover, .md-button.md-fab:not([disabled]):hover{
+  background: #8eb446;
+}
+.grayMenu{
+  background: #f9f9f9;
+  position: relative;
+
+}
+.grayMenu__list {
+  display: inline-block;
+      width: 100%;
+}
+.grayMenu__list li a{
+  padding: 20px;
+    padding-left: 3em;
+color: #37465b;
+display: inline-block;
+width: 100%;
+text-decoration: none;
+border-bottom: 1px solid #d2d5d9;
+}
+
+.grayMenu__list li .active{
+  background: #e5e5e5;
+
+}
+
+.chatFlex{
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  background: #cccccc;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.chatFlex div{
+  display: -webkit-flex;
+  display: flex;
+}
+
+.messageView{
+  padding: 15px;
+}
+.has-f-chat{
+  bottom:76px;
+}
+.focusContent{
+      background: #f7f7f7;
+      transition: all 0.4s;
+}
+.focusFooter{
+  background: #fff;
+  color: #9fd12a !important;
+  transition: all 0.4s;
+  border-top: 1px solid #979ea9;
+}
+
+.sendBottomBtn{
+  background: #cccccc;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sendClientData{
+  padding: 20px;
+  padding-left: 45px;
+  text-align: left;
+  font-weight: bold;
+  border-top: 1px solid #cccccc;
+  color: #37465b;
+}
+.sendClientData md-icon{
+  color: #37465b;
+  margin-right: 15px;
+}
+.sendFormBottomBtn{
+  background: #99ca3c;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.form{
+  margin: 0 auto;
+text-align: center;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.form .registerForm__fromcontent md-input-container{
+  width: auto;
+}
+.prefAvarar{
+  top: 39%;
+  left: 50%;
+
+}
+
+md-sidenav.<md-sidenav-class>:not(:first-of-type) {
+    display: none !important;
+}
+.scroll-content{
+  background: #fff;
+}
+input[type='date']{
+  color: #aeb2b8 !important;
+}
+.date:after{
+  content: "Дата рождения";
+  position:absolute;
+  left: 4px;
+  bottom: 10px;
+}
+.hasDate:after{
+content: "";
+}
+
+
+
+.textarea-container {
+  position: relative;
+  /* you should change this*/
+  width: 50%;
+}
+
+textarea, .textarea-size {
+  min-height: 25px;
+  /* need to manually set font and font size */
+  font-family: sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 4px;
+  border: 1px solid;
+
+  overflow: hidden;
+  width: 100%;
+}
+
+textarea {
+  //height: 100%;
+  height: 26px;
+//  position: absolute;
+  resize:none;
+
+  /*
+  "pre" or "preline" or "normal" fixes Chrome issue where
+    whitespace at end of lines does not trigger a line break.
+  However, it causes the text to exhibit the behavior seen with
+    "pre" that is described below.
+   */
+  white-space: normal;
+}
+
+.textarea-size {
+  visibility: hidden;
+
+  /*
+  Pre-wrap: preserve spacing and newlines, but wrap text.
+  Pre: preserve spacing and newlines but don't wrap text.
+
+  "pre" does not wrap well on Firefox, even with word-wrap:break-word.
+  "pre" on Chrome works with word-wrap, but exhibits different behavior:
+  Instead of entire words being moved to the next line for wrapping,
+  the browser will cut words in the middle for wrapping.
+  "pre-line" has Firefox issues
+  */
+  white-space: pre-wrap;
+  /* Required for wrapping lines in Webkit,
+    but not necessary in Firefox if you have white-space wrapping
+    (pre-wrap, normal, pre-line) already set */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
+.social-links{
+  display: inline-block;
+    vertical-align: baseline;
+    font-size: 16px;
+    color: #fff;
+    height: 28px;
+    line-height: 28px
+}
+.social-links A {
+    display: inline-block;
+    margin: 0 14px 0 0;
+    width: 28px;
+    height: 28px;
+    background: transparent no-repeat 100%;
+    background-size: contain;
+  }
+
+  .baseList{
+
+  }
+  .baseList li{
+    display: block;
+    padding: 20px;
+    border-bottom: 1px solid #cccccc;
+    color: #37465b;
+  }
+.listgrid{
+  padding: 0;
+ margin: 0;
+ list-style: none;
+
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+
+ -webkit-flex-flow: row wrap;
+ justify-content: space-around;
+}
+
+
+.listgrid .active{
+  background: #a0d228;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.listgriditem{
+  background: #b6b6b6;
+  width: 50%;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.griditem{
+  width: 90px;
+height: 90px;
+color: #fff;
+text-align: center;
+float: left;
+margin: 8px;
+}
+
+.md-toolbar-tools h2{
+margin-left: 5% !important;
+font-size: 18px !important;
+}

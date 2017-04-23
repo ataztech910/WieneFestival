@@ -1,0 +1,18 @@
+<md-bottom-sheet class="md-grid" layout="column" keyboard-attach>
+
+<div>
+
+  <div>
+      
+      Делегировать на :
+      <md-input-container>
+      <md-select ng-model="reciver">
+        <md-option ng-repeat="(k,v) in admins" value="{{k}}">{{v.fio}}</md-option>
+      </select>
+      </md-input-container>
+      <md-button  class="md-raised md-primary" ng-click="delegate()">Делегировать</md-button>
+  </div>
+
+</div>
+
+</md-bottom-sheet>    

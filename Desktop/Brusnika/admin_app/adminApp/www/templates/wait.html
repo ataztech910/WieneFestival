@@ -1,0 +1,64 @@
+<div  layout="column"  ng-cloak>
+
+<div ng-repeat="userData in user">
+
+<div class="wait" ng-show="userData.active==false && userData.guid==''">
+<div class="wait__middle">
+<div class="wait__image">
+    <img src="img/wait.png" width="70%" />
+</div>
+<div class="wait__text">
+
+<h2>Ожидайте</h2>
+<span>Вам необходимо дождаться  одобрения
+нашего администратора</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="wait" ng-show="userData.active==true && userData.guid!=''">
+<div class="wait__middle">
+<div class="wait__image">
+    <img src="img/correct.png" width="70%" />
+</div>
+<div class="wait__text">
+
+<h2>Одобрено</h2>
+<span>Спасибо за ожидание, ваша заявка одобрена</span>
+
+
+    <div ui-sref="auth" class="send-button"  style="margin-top:20px">
+
+        <span>войти</span>
+        <md-icon md-svg-src="img/icons/ic_arrow_ff_24px.svg" class="ng-scope" aria-hidden="true">
+        </md-icon>
+      
+    </div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="wait" ng-show="userData.active==false && userData.guid!=''">
+<div class="wait__middle">
+<div class="wait__image">
+    <img src="img/wrong.png" width="70%" />
+</div>
+<div class="wait__text">
+
+<h2>Отказано</h2>
+<span>Спасибо за ожидание, вам отказано.
+Подробности вы можете узнать
+по телефону</span>
+
+<h3>Екатерина Полякова</h3>
+<h3>+7(922)-451-25-76</h3>
+
+</div>
+</div>
+</div>
+</div>

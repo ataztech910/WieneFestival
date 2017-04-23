@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "312184660161",
+    "firebase_url": "https://brusnikaapp-12e78.firebaseio.com",
+    "project_id": "brusnikaapp-12e78",
+    "storage_bucket": "brusnikaapp-12e78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312184660161:android:7f9f034cef6ff9c5",
+        "android_client_info": {
+          "package_name": "com.ionicframework.adminapp516681"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312184660161-albkpg69582lda5v57qia5kohb2l8dfv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOu8VpbDqL31XQNqECqBmItuyv6ogeMEQ"
+        },
+        {
+          "current_key": "AIzaSyDTvIQS85e-PxbuibZk5n-d70WEy90VcE8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

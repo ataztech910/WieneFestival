@@ -1,0 +1,204 @@
+<div layout="column" ng-cloak ng-load="hideKeys();">
+
+    <ion-header-bar>
+        <md-toolbar>
+            <div class="md-toolbar-tools docs-toolbar-tools">
+                <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button"  ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+                    <md-icon md-svg-src="img/icons/ic_menu_24px.svg" class="ng-scope" aria-hidden="true">
+                        <div class="md-ripple-container"></div></button>
+                <h2 class="md-toolbar-item md-breadcrumb md-headline">{{currentMenu}}</h2>
+            </div>
+        </md-toolbar>
+    </ion-header-bar>
+
+
+    <section layout="row" flex>
+
+
+        <md-sidenav  class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+            <md-content class="nopadding" layout-margin >
+                <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button" ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+                    <md-icon md-svg-src="img/icons/ic_close_24px.svg" class="ng-scope" aria-hidden="true">
+                        <div class="md-ripple-container"></div>
+                </button>
+                <div class="userAvatar" style="border-radius: 50%;overflow:hidden; width: 150px; height: 150px;margin: 0 auto; ">
+                    <img data-ng-src="{{avatar}}" width="150%"/>
+                    <div class="userAvatar__fab" style="right: 11px;">
+                        <md-fab-trigger ui-sref="prefs">
+                            <md-button aria-label="menu" class="md-fab ">
+                                <md-icon md-svg-src="img/icons/pencil-edit-button.svg"></md-icon>
+                            </md-button>
+                        </md-fab-trigger>
+                    </div>
+                </div>
+                <div class="userName">
+                    {{userName}}
+                </div>
+
+            </md-content>
+
+
+            <div class="grayMenu">
+                <div class="shadowLine"></div>
+
+                <ul class="grayMenu__list">
+                    <li>
+                        <a ui-sref="chat" class="active">Лента</a>
+                    </li>
+                    <li ng-if="role=='admin'">
+                        <a ui-sref="users">Пользователи</a>
+                    </li>
+                    <li ng-if="role=='admin'">
+                        <a ui-sref="files">Управление файлами</a>
+                    </li>
+                    <li>
+                        <a ui-sref="prefs">Настройки</a>
+                    </li>
+                    <li>
+                        <a ui-sref="exit">Выйти</a>
+                    </li>
+                </ul>
+
+            </div>
+        </md-sidenav>
+
+
+<section layout="row" flex style="height: 600px;">
+  <md-sidenav  class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+    <md-content layout-margin>
+      <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button" ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" class="ng-scope" aria-hidden="true">
+        <div class="md-ripple-container"></div>
+      </button>
+      <div class="userAvatar" style="border-radius: 50%;overflow: hidden;width: 250px;height: 250px;">
+          <img data-ng-src="{{avatar}}" width="150%"/>
+          <div class="userAvatar__fab">
+            <md-fab-trigger ui-sref="prefs">
+              <md-button aria-label="menu" class="md-fab ">
+                <md-icon md-svg-src="img/icons/pencil-edit-button.svg"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+          </div>
+      </div>
+      <div class="userName">
+        {{userName}}
+      </div>
+</md-content>
+<div class="grayMenu">
+  <div class="shadowLine"></div>
+    <ul class="grayMenu__list">
+          <li>
+            <a ui-sref="chat" class="active">Лента</a>
+          </li>
+          <li ng-if="role=='admin'">
+            <a ui-sref="users">Пользователи</a>
+          </li>
+          <li>
+            <a ui-sref="prefs">Настройки</a>
+          </li>
+          <li>
+            <a ui-sref="exit">Выйти</a>
+          </li>
+        </ul>
+      </div>
+  </md-sidenav>
+
+<ion-content  ng-click="hideKeys();" ng-class="{'focusContent': textFocused}" has-bouncing="true" class="has-header has-footer has-f-chat" delegate-handle="userMessageScroll" style="height: 391px;">
+<md-content flex layout-padding id="chatcont">
+<div ng-show="showchat" class="message-wrapper disable-user-behavior" ng-repeat="chat in chats" ng-cloak>
+  <div>
+      <img class="profile-pic" ng-class="checkUser(chat.uid)" ng-src="http://ionicframework.com/img/docs/mcfly.jpg"  src="http://ionicframework.com/img/docs/mcfly.jpg">
+      <div class="chat-bubble" ng-class="checkUser(chat.uid)">
+      <div class="message-detail">
+            <span  class="bold ng-binding">{{chat.user}}</span>,
+            <span am-time-ago="chat.message_date"><span ng-show="checkDate(chat.message_currday, chat.message_currmonth)">{{chat.message_currday}} {{chat.message_currmonth}} в </span>{{chat.message_date}}</span>
+        </div>
+        <div ng-if="!chat.attach && chat.state !== 'sendFile'" class="message ng-binding"  autolinker="">
+            {{chat.message}}
+        </div>
+        <div ng-if="chat.attach" class="message ng-binding"  autolinker="">
+            <img ng-src="{{chat.message}}" width="100px"/>
+        </div>
+        <div ng-if="chat.state === 'sendFile'" class="message ng-binding"  autolinker="">
+          <a ng-href="{{chat.message.href}}">{{chat.message.name}}</a>
+        </div>
+      </div>
+  </div><!-- end ngIf: user._id === message.userId -->
+
+  <div class="cf"></div>
+<div ng-init="chatEvent()"></div>
+</div>
+
+
+</md-content>
+    </ion-content>
+
+</section>
+
+
+<div keyboard-attach class="bar bar-footer bar-stable item-input-inset slack-menssage-bar ">
+  <!--i class="icon ion-ios-plus-outline" style="margin-right:10px;" ng-click="toggleRight()"></i-->
+  <i class="icon ion-ios-plus-outline" style="margin-right:10px;" ng-click="showGridBottomSheet()"></i>
+  <label class="item-input-wrapper" style="border: 1px solid #9ba2ad;background: #fff;">
+    <textarea style="border:none !important;" ng-focus="ajustarScroll(); newMessage=false;" placeholder="Написать сообщение" ng-blur="ajustarScroll()" ng-model="userchat.message"></textarea>
+    <!-- <input type="text" placeholder="Написать сообщение" ng-focus="ajustarScroll(); newMessage=false;"  ng-blur="ajustarScroll()" ng-model="userchat.message" /> -->
+
+  </label>
+  <div ng-show="userchat.message" ng-class="{ocultar:!message.text}" ng-click="sendChat(userchat)" class="button button-clear button-positive" >
+    Отпр.
+  </div>
+
+</div>
+
+
+
+<!--<div class="bar bar-footer bar-stable item-input-inset slack-menssage-bar " style="text-align:right;height: 123.3334px;">-->
+
+  <!--<div>
+      Делегировать на :
+      <md-input-container>
+      <md-select ng-model="reciver">
+        <md-option ng-repeat="(k,v) in admins" value="{{k}}">{{v.fio}}</md-option>
+      </select>
+      </md-input-container>
+      <md-button  class="md-raised md-primary" ng-click="delegate()">Делегировать</md-button>
+  </div>-->
+
+  <!--<div>
+      <md-menu>
+        <md-button ng-click="$mdOpenMenu($event)">
+          Файл
+          <!-- <md-icon md-svg-icon="call:phone"></md-icon> 
+        </md-button>
+        <md-menu-content>
+          <md-menu-item ng-repeat="dir in fstruct">
+            <md-menu>
+              <md-button ng-click="$mdOpenMenu($event)">
+                {{ dir.dirname }}
+                <!-- <md-icon md-svg-icon="call:phone"></md-icon> 
+              </md-button>
+              <md-menu-content>
+                <md-menu-item ng-repeat="file in dir.files">
+                  <md-button ng-click="sendFileUrl(dir, file)">
+                    {{ file.name }}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+  </div>-->
+  <!--<div>
+    <label class="item-input-wrapper" style="background: #fff;">
+      <input style="border: 1px solid #9ba2ad; padding: 10px; width: 50%" type="text" placeholder="Написать сообщение" ng-focus="ajustarScroll()" ng-blur="ajustarScroll()" ng-model="userchat.message">
+    </label>
+    
+    <div style="display:inline-block; cursor: pointer" ng-show="userchat.message" ng-class="{ocultar:!message.text}" ng-click="sendChat(userchat)" class="button button-clear button-positive" >
+      Отпр.
+    </div>
+  </div>-->
+
+<!--</div>-->
+
+</div>

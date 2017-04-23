@@ -1,0 +1,223 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FirebasePlugin\"><param name=\"android-package\" value=\"org.apache.cordova.firebase.FirebasePlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"FCMPlugin\"><param name=\"android-package\" value=\"com.gae.scaffolder.plugin.FCMPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"DeviceFeedback\"><param name=\"android-package\" value=\"cz.Velda.cordova.plugin.devicefeedback.DeviceFeedback\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "res/values/strings.xml": {
+                "parents": {
+                    "/resources": [
+                        {
+                            "xml": "<string name=\"google_app_id\">@string/google_app_id</string>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<string name=\"google_api_key\">@string/google_api_key</string>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<service android:name=\"org.apache.cordova.firebase.FirebasePluginMessagingService\"><intent-filter><action android:name=\"com.google.firebase.MESSAGING_EVENT\" /></intent-filter></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"org.apache.cordova.firebase.FirebasePluginInstanceIDService\"><intent-filter><action android:name=\"com.google.firebase.INSTANCE_ID_EVENT\" /></intent-filter></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"org.apache.cordova.firebase.OnNotificationOpenReceiver\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:exported=\"true\" android:launchMode=\"singleTop\" android:name=\"com.gae.scaffolder.plugin.FCMPluginActivity\"><intent-filter><action android:name=\"FCM_PLUGIN_ACTIVITY\" /><category android:name=\"android.intent.category.DEFAULT\" /></intent-filter></activity>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"com.gae.scaffolder.plugin.MyFirebaseMessagingService\"><intent-filter><action android:name=\"com.google.firebase.MESSAGING_EVENT\" /></intent-filter></service>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"com.gae.scaffolder.plugin.MyFirebaseInstanceIDService\"><intent-filter><action android:name=\"com.google.firebase.INSTANCE_ID_EVENT\" /></intent-filter></service>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-firebase": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-velda-devicefeedback": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.adminapp516681"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "id": "cordova-plugin-device.device",
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "id": "cordova-plugin-firebase.FirebasePlugin",
+            "file": "plugins/cordova-plugin-firebase/www/firebase.js",
+            "pluginId": "cordova-plugin-firebase",
+            "clobbers": [
+                "FirebasePlugin"
+            ]
+        },
+        {
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "id": "cordova-plugin-statusbar.statusbar",
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "pluginId": "cordova-plugin-statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
+        },
+        {
+            "id": "ionic-plugin-keyboard.keyboard",
+            "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+            "pluginId": "ionic-plugin-keyboard",
+            "clobbers": [
+                "cordova.plugins.Keyboard"
+            ],
+            "runs": true
+        },
+        {
+            "id": "cordova-plugin-fcm.FCMPlugin",
+            "file": "plugins/cordova-plugin-fcm/www/FCMPlugin.js",
+            "pluginId": "cordova-plugin-fcm",
+            "clobbers": [
+                "FCMPlugin"
+            ]
+        },
+        {
+            "id": "cordova-plugin-velda-devicefeedback.DeviceFeedback",
+            "file": "plugins/cordova-plugin-velda-devicefeedback/DeviceFeedback.js",
+            "pluginId": "cordova-plugin-velda-devicefeedback",
+            "clobbers": [
+                "window.plugins.deviceFeedback"
+            ]
+        },
+        {
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "pluginId": "cordova-plugin-inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-console": "1.0.5",
+        "cordova-plugin-device": "1.1.4",
+        "cordova-plugin-firebase": "0.1.20",
+        "cordova-plugin-splashscreen": "4.0.1",
+        "cordova-plugin-statusbar": "2.2.1",
+        "cordova-plugin-whitelist": "1.3.1",
+        "ionic-plugin-keyboard": "2.2.1",
+        "cordova-plugin-fcm": "2.1.1",
+        "cordova-plugin-velda-devicefeedback": "0.0.2",
+        "cordova-plugin-inappbrowser": "1.7.0"
+    }
+}

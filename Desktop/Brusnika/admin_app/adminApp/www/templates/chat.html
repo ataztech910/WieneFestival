@@ -1,0 +1,142 @@
+<div layout="column" ng-cloak>
+
+
+    <ion-header-bar>
+        <md-toolbar>
+          <div class="md-toolbar-tools docs-toolbar-tools">
+          <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button"  ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+          <md-icon md-svg-src="img/icons/ic_menu_24px.svg" class="ng-scope" aria-hidden="true">
+          <div class="md-ripple-container"></div></button>
+          <h2 class="md-toolbar-item md-breadcrumb md-headline">{{currentMenu}}</h2>
+        </div>
+        </md-toolbar>
+    </ion-header-bar>
+
+
+ <section layout="row" flex>
+
+
+  <md-sidenav  class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+    <md-content class="nopadding" layout-margin >
+      <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button" ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" class="ng-scope" aria-hidden="true">
+        <div class="md-ripple-container"></div>
+      </button>
+      <div class="userAvatar" style="border-radius: 50%;overflow:hidden; width: 150px; height: 150px;margin: 0 auto; ">
+          <img data-ng-src="{{avatar}}" width="150%"/>
+          <div class="userAvatar__fab" style="right: 11px;">
+            <md-fab-trigger ui-sref="prefs">
+              <md-button aria-label="menu" class="md-fab ">
+                <md-icon md-svg-src="img/icons/pencil-edit-button.svg"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+          </div>
+      </div>
+      <div class="userName">
+        {{userName}}
+      </div>
+
+    </md-content>
+
+
+      <div class="grayMenu">
+      <div class="shadowLine"></div>
+
+        <ul class="grayMenu__list">
+          <li>
+            <a ui-sref="chat" class="active">Лента</a>
+          </li>
+          <li ng-if="role=='admin'">
+            <a ui-sref="users">Пользователи</a>
+          </li>
+          <li ng-if="role=='admin'">
+            <a ui-sref="files">Управление файлами</a>
+          </li>
+          <li>
+            <a ui-sref="prefs">Настройки</a>
+          </li>
+          <li>
+            <a ui-sref="exit">Выйти</a>
+          </li>
+        </ul>
+
+      </div>
+  </md-sidenav>
+
+<ion-content  ng-click="hideKeys();" ng-class="{'focusContent': textFocused}" has-bouncing="true" class="has-header has-footer has-f-chat" delegate-handle="userMessageScroll">
+<md-content flex layout-padding ng-click="closeMenu()" ng-class="{'focusContent': textFocused}" layout="column" flex>
+
+<md-list>
+
+  <md-list-item ng-show="role=='admin'" ui-sref="showUserChat({id: k})" style="background: transparent; border-bottom: 1px solid #ebebeb;" class="md-3-line" ng-repeat="(k,v) in users" ng-click="null">
+          <img ng-src="img/user.png" class="md-avatar" alt="{{v.fio}}" />
+          <div class="md-list-item-text" layout="column">
+            <h3>
+              {{v.fio}}
+              <md-badge ng-show="unread[k]">{{unread[k]}}</md-badge>
+            </h3>
+          </div>
+  </md-list-item>
+
+  <md-list-item ng-cloak ng-show="role=='manager'" ui-sref="showUserChat( {id: user.id} )" style="background: transparent; border-bottom: 1px solid #ebebeb;" class="md-3-line" ng-repeat="(k,user) in users" ng-click="null">
+          <img ng-src="img/user.png" class="md-avatar" alt="{{user.fio}}" />
+          <div class="md-list-item-text" layout="column">
+            <h3>
+              {{user.fio}}
+              <!-- UNTESTED-->
+              <md-badge ng-show="unread[k]">{{unread[k]}}</md-badge>
+            </h3>
+          </div>
+  </md-list-item>
+
+  <md-progress-circular ng-show="nousers"  md-mode="indeterminate"></md-progress-circular>
+
+</md-list>
+
+</md-content>
+</ion-content>
+     <div keyboard-attach class="bar bar-footer bar-stable item-input-inset slack-menssage-bar ">
+         <!--i class="icon ion-ios-plus-outline" style="margin-right:10px;" ng-click="toggleRight()"></i-->
+         <i class="icon ion-ios-list-outline" style="margin-right:10px; font-size: 200%;" ng-click="showGridBottomSheet()"></i>
+         <label class="item-input-wrapper" style="border: 1px solid #9ba2ad;background: #fff;">
+             <textarea style="border:none !important;" ng-focus="ajustarScroll(); newMessage=false;" placeholder="Написать сообщение всем пользователям" ng-blur="ajustarScroll()" ng-model="userchat.message"></textarea>
+             <!-- <input type="text" placeholder="Написать сообщение всем пользователям" ng-focus="ajustarScroll(); newMessage=false;"  ng-blur="ajustarScroll()" ng-model="userchat.message" /> -->
+
+         </label>
+         <div ng-show="userchat.message" ng-class="{ocultar:!message.text}" ng-click="sendChatAll(userchat)" class="button button-clear button-positive" >
+             Отпр.
+         </div>
+
+     </div>
+
+<!-- <md-content flex layout-padding style="padding-top:30px;"> -->
+<!--<div class="bar bar-footer bar-stable item-input-inset slack-menssage-bar "-->
+   <!--style="padding-top:30px;">-->
+
+<!--<label class="item-input-wrapper" style="background: #fff;">-->
+  <!--<input style="border: 1px solid #9ba2ad; padding: 10px; width: 50%" -->
+         <!--type="text" placeholder="Написать сообщение всем пользователям" -->
+         <!--ng-focus="ajustarScroll()" ng-blur="ajustarScroll()" ng-model="userchat.message">-->
+<!--</label>-->
+<!--<div style="display:inline-block; cursor: pointer"-->
+     <!--ng-show="userchat.message" ng-class="{ocultar:!message.text}"-->
+     <!--ng-click="sendChatAll(userchat)" class="button button-clear button-positive" >-->
+  <!--Отпр.-->
+<!--</div>-->
+
+<!--<div style="padding:10px;">-->
+  <!--<div ng-repeat="sharedMess in sharedMess | orderBy:'$index':true">-->
+    <!--<b>{{sharedMess.message_currday}} {{sharedMess.message_currmonth}}</b>-->
+    <!--{{sharedMess.message}}  -->
+  <!--</div>  -->
+<!--</div> -->
+
+
+<!--</div>-->
+<!-- </md-content> -->
+
+
+
+
+</section>
+</div>

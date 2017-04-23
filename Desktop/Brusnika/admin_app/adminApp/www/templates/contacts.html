@@ -1,0 +1,104 @@
+<div layout="column"  ng-cloak>
+
+
+  <ion-header-bar>
+    <md-toolbar>
+      <div class="md-toolbar-tools docs-toolbar-tools">
+      <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button"  ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+      <md-icon md-svg-src="img/icons/ic_menu_24px.svg" class="ng-scope" aria-hidden="true">
+      <div class="md-ripple-container"></div></button>
+      <h2 class="md-toolbar-item md-breadcrumb md-headline">{{currentMenu}}</h2>
+    </div>
+   </md-toolbar>
+
+  </ion-header-bar>
+
+  <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
+    <md-content layout-margin>
+      <button class="md-icon-button md-button md-ink-ripple hide-gt-sm" type="button"  ng-click="toggleLeft()" hide-gt-sm="" aria-label="Toggle Menu">
+      <md-icon md-svg-src="img/icons/ic_close_24px.svg" class="ng-scope" aria-hidden="true">
+      <div class="md-ripple-container"></div></button>
+
+      <div class="userAvatar">
+          <img src="img/user.png" width="55%"/>
+          <div class="userAvatar__fab">
+
+            <md-fab-trigger ui-sref="prefs">
+              <md-button aria-label="menu" class="md-fab ">
+                <md-icon md-svg-src="img/icons/pencil-edit-button.svg"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+
+          </div>
+      </div>
+      <div class="userName">
+        {{userName}}
+
+      </div>
+
+
+      <!--md-button ng-click="toggleLeft()" class="md-accent">
+        Close this Sidenav
+      </md-button-->
+    </md-content>
+
+
+      <div class="grayMenu">
+      <div class="shadowLine"></div>
+
+        <ul class="grayMenu__list">
+          <li>
+            <a ui-sref="chat" ui-sref-opts="{reload: true}">Лента</a>
+          </li>
+          <li>
+            <a ui-sref="base" ui-sref-opts="{reload: true}">База знаний</a>
+          </li>
+          <li>
+            <a ui-sref="contacts" class="active" ui-sref-opts="{reload: true}">Связаться с брусникой</a>
+          </li>
+          <!--li>
+            <a ui-sref="#">Кабинет</a>
+          </li>
+          <li>
+            <a ui-sref="#">Перейти на сайт</a>
+          </li-->
+          <li>
+            <a ui-sref="prefs" ui-sref-opts="{reload: true}">Настройки</a>
+          </li>
+          <li>
+            <a ui-sref="#" ui-sref-opts="{reload: true}">Удалить с телефона</a>
+          </li>
+        </ul>
+
+      </div>
+  </md-sidenav>
+
+<ion-content>
+
+
+
+<md-content layout="column" flex style="text-align:center;margin-top:20px">
+
+<div style="margin: 0 auto; width: 70%">
+<h3 style="color:#37465b;">Контакты</h3>
+<md-input-container md-no-float class="selectonreg">
+  <label ng-show="user.phone==''">Телефон</label>
+  <md-select  ng-model="user.phone" >
+    <md-option ng-repeat="types in types" ng-value="types">
+      {{types}}
+    </md-option>
+  </md-select>
+</md-input-container>
+
+<div class="social">
+  <div style="color:#37465b; font-size:18px;margin-bottom:20px;margin-top:20px;">Социальные сети</div>
+
+  <img src="img/social.png" width="80%"/>
+
+</div>
+</div>
+</md-content>
+</ion-content>
+
+
+</div>
