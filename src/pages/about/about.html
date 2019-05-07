@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title >
+       О фестивале
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="about" has-header has-footer  *ngIf="content!=undefined">
+
+<ion-fab top right edge>
+    <button ion-fab ><ion-icon name="ios-map-outline"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+  <div class="header-image">
+  <img src="http://vmff.ru/tmp/top2.jpg" />
+</div>
+  <ion-card-title>
+     О фестивале 
+  </ion-card-title>
+  <div class="main-content" [innerHTML] = "content.text"></div>
+
+  
+</ion-content>
